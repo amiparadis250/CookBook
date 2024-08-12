@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: true }));
 app.get('/', async(req: Request, res: Response): Promise<Response> => {
-    return res.status(200).send({ message: `Welcome to the cookbook API! \n Endpoints available at http://localhost:${port}/api/v1` })
+    return res.status(200).send({ message: `Welcome to the cookbook API` })
 })
 
 app.use('/api/ingredients', ingredientsRouter);
