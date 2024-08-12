@@ -2,10 +2,12 @@ import express, { Application, Request, Response } from 'express'
 import connectToDatabase from './database/config/database.config';
 import ingredientsRouter from './api/routes/ingredients.routes';
 import morgan from "morgan"
+import cors from "cors"
 const app: Application = express()
 const port = 5000
 
 // Body parsing Middleware
+app.use(cors())
 app.use(express.json());
 app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: true }));
